@@ -2,6 +2,9 @@ package model;
 
 import java.util.List;
 
+/**
+ * Charaktere class with the foloowings attributes
+ */
 public class Charaktere implements HasID {
     private Integer id;
     private String name;

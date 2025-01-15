@@ -41,6 +41,8 @@ public class ConsoleApp {
                     9.Get customer
                     10. Get product
                     11.filter by ort
+                    12.filter by the product
+                    13.Sort the products
                    
                     0. Exit
                     """);
@@ -84,11 +86,14 @@ public class ConsoleApp {
                     break;
                     case "11":
                         controller.filterCustomer(scanner);
+                        break;
 
                 case "12":
                         controller.filterCustomerByProduct(scanner);
+                        break;
                 case "13":
                     controller.sortByUser(scanner);
+                    break;
                 default:
             }
         }

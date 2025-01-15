@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * class product with the foloowings attributes
+ */
 public class Produkt implements HasID{
 
     private int id;
