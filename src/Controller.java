@@ -3,6 +3,7 @@ import model.Produkt;
 import repository.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -164,6 +165,15 @@ public class Controller {
             System.out.println("Produkt not found with name: " + id);
         }
     }
-
+    //c)
+    //filtrare clienti care sunt din orasul dat de la tastatura
+    public void filterCustomer(Scanner scanner){
+        System.out.println("Enter the name of the city");
+        String ort = scanner.nextLine();
+        StringBuilder output = new StringBuilder("Kunden :\n");
+        List<Charaktere> filterKunden=new ArrayList<>(repoKunde.getAll());
+        filterKunden.stream().filter(kunde-> kunde.getOrt().equals(ort)).forEach(kunde -> output.append(kunde).append("\n"));
+        System.out.println(output);
+    }
 
 }

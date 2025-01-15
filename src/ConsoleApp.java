@@ -40,6 +40,7 @@ public class ConsoleApp {
                     8.Update product
                     9.Get customer
                     10. Get product
+                    11.filter by ort
                    
                     0. Exit
                     """);
@@ -81,6 +82,8 @@ public class ConsoleApp {
                 case "10":
                     controller.getProduct(scanner);
                     break;
+                    case "11":
+                        controller.filterCustomer(scanner);
                 default:
             }
         }
