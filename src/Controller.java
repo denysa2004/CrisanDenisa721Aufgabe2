@@ -176,4 +176,23 @@ public class Controller {
         System.out.println(output);
     }
 
+
+    //filtrare clienti care au un produs cumparat,in anotimpul....
+    public void filterCustomerByProduct(Scanner scanner){
+        System.out.println("Enter a ort");
+        String jahreszeit = scanner.nextLine();
+        StringBuilder output = new StringBuilder("Kunden :\n");
+        List<Charaktere> filterKunden=new ArrayList<>(repoKunde.getAll());
+        for(Charaktere kunde:filterKunden){
+            for(Produkt produkt :kunde.getOrederdProducts()){
+                if(produkt.getHerkunftsregion().equals(jahreszeit))
+                    output.append(kunde.getName()).append("\n");
+                break;
+            }
+        }
+
+        System.out.println(output);
+
+    }
+
 }
