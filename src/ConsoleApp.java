@@ -84,6 +84,11 @@ public class ConsoleApp {
                     break;
                     case "11":
                         controller.filterCustomer(scanner);
+
+                case "12":
+                        controller.filterCustomerByProduct(scanner);
+                case "13":
+                    controller.sortByUser(scanner);
                 default:
             }
         }

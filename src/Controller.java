@@ -3,6 +3,7 @@ import model.Produkt;
 import repository.Repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -176,7 +177,7 @@ public class Controller {
         System.out.println(output);
     }
 
-
+    //d)
     //filtrare clienti care au un produs cumparat,in anotimpul....
     public void filterCustomerByProduct(Scanner scanner){
         System.out.println("Enter a ort");
@@ -192,6 +193,27 @@ public class Controller {
         }
 
         System.out.println(output);
+
+    }
+
+    public void sortByUser(Scanner scanner){
+        System.out.println("Enter the id of the user");
+        Integer id = Integer.parseInt(scanner.nextLine());
+        System.out.println("Enter a if you want to sort them < or d if you want to sort them >");
+        String letter = scanner.nextLine();
+        List<Produkt> products=new ArrayList<>(repoKunde.get(id).getOrederdProducts());
+        System.out.println(repoKunde.get(id).getName()+" with the followings Products ");
+        if(letter.charAt(0)=='a'){
+            products.sort(Comparator.comparing(Produkt::getPrice));
+            for(Produkt produkt : products)
+                System.out.println(produkt);
+        }
+        if (letter.charAt(0)=='d'){
+            products.sort(Comparator.comparing(Produkt::getPrice).reversed());
+            for (Produkt produkt : products)
+                System.out.println(produkt);
+        }
+
 
     }
 
